@@ -1,0 +1,11 @@
+lost+found
+
+#ESPHome ignores
+/.esphome/
+/.build/
+**/.pioenvs/
+**/.piolibdeps/
+**/lib/
+**/src/
+**/platformio.ini
+/secrets.yaml

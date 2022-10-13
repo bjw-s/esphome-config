@@ -1,0 +1,9 @@
+---
+substitutions:
+  system_name: backyard_shed
+  host_name: backyard-shed-esp
+  friendly_name: Backyard - Shed
+  device_description: Shelly 1 that controls backyard shed lights
+
+packages:
+  device: !include devices/shelly_1.yaml
