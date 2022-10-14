@@ -4,7 +4,9 @@
 #
 
 substitutions:
+  # Higher value gives lower watt readout
   current_res: "${current_res}"
+  # Lower value gives lower voltage readout
   voltage_div: "${voltage_div}"
 
 packages:

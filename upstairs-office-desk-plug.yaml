@@ -1,0 +1,11 @@
+---
+substitutions:
+  system_name: upstairs_office_desk_plug
+  host_name: upstairs-office-desk-plug
+  friendly_name: Upstairs Office - Desk Plug
+  device_description: CloudFree P1EU plug that controls upstairs office desk power
+  current_res: "0.00245"
+  voltage_div: "963"
+
+packages:
+  device: !include devices/cloudfree_p1eu.yaml
