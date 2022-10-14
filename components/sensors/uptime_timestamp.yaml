@@ -20,6 +20,6 @@ accuracy_decimals: 0
 update_interval: never
 lambda: |-
   static float timestamp = (
-    id(time_homeassistant).utcnow().timestamp - id(sensor_uptime).state
+    id(time_sntp).utcnow().timestamp - id(sensor_uptime).state
   );
   return timestamp;

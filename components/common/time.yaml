@@ -10,13 +10,10 @@ substitutions:
   time_timezone: "Europe/Amsterdam"
 
 time:
-  - <<: !include ../time/homeassistant.yaml
+  - <<: !include ../time/sntp.yaml
     timezone: "${time_timezone}"
     on_time_sync:
       - component.update: sensor_uptime_timestamp
-
-  - <<: !include ../time/sntp.yaml
-    timezone: "${time_timezone}"
 
 sensor:
   - <<: !include ../sensors/uptime.yaml
