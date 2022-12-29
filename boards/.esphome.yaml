@@ -7,4 +7,3 @@
 #
 name: "${system_name}"
 comment: "${device_description}"
-build_path: "./.build/${system_name}/"
