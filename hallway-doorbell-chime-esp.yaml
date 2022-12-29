@@ -75,6 +75,3 @@ binary_sensor:
       number: GPIO14
       mode: INPUT_PULLUP
       inverted: true
-    on_press:
-      then:
-        - script.execute: chime_if_not_muted
