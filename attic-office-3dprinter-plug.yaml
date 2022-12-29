@@ -1,0 +1,11 @@
+---
+substitutions:
+  system_name: attic_office_3dprinter_plug
+  host_name: attic-office-3dprinter-plug
+  friendly_name: Attic Office - 3D Printer
+  device_description: CloudFree P1EU plug that controls attic office 3D printer power
+  current_res: "0.00245"
+  voltage_div: "963"
+
+packages:
+  device: !include devices/cloudfree_p1eu.yaml
