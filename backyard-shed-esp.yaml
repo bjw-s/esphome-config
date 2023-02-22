@@ -1,7 +1,7 @@
 ---
 substitutions:
   system_name: backyard_shed
-  host_name: backyard-shed-esp
+  host_name: backyard-shed-esp.bjw-s.tech
   friendly_name: Backyard - Shed
   device_description: Shelly 1 that controls backyard shed lights
 

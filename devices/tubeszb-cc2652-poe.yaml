@@ -7,8 +7,17 @@ packages:
   <<: !include_dir_named ../components/common
   board: !include ../boards/esp_wrover_kit.yaml
 
+esphome:
+  on_boot:
+    priority: 600
+    then:
+      - switch.turn_on: zRST_gpio
+      - delay: 15ms
+      - switch.turn_off: zRST_gpio
+
 substitutions:
   host_name: "${host_name}"
+  log_level: "DEBUG"
 
 external_components:
   - source: github://tube0013/esphome-stream-server-v2
@@ -34,36 +43,38 @@ script:
       - logger.log: "Delaying ~10 seconds for cc2652p2 to settle"
       - delay: 11s
       - switch.turn_off: zBSL
-      - logger.log: "Please try update with cc-bsl tool now"
-      - logger.log: "cc-bsl usage: cc-bsl.py -p socket://ip-of-gw:6638 -evw firmware.hex"
+      - logger.log: "Please try update with cc2538-bsl tool now"
+      - logger.log: "cc-bsl usage: cc2538-bsl.py -p socket://ip-of-gw:6638 -evw firmware.hex"
 
 switch:
   - platform: gpio
-    pin: 13
+    pin: 33
     id: zRST_gpio
     inverted: true
     restore_mode: ALWAYS_OFF
-  - platform: template
-    name: "zRST"
-    id: zRST
-    turn_on_action:
-      - switch.turn_on: zRST_gpio
-      - delay: 15ms
-      - switch.turn_off: zRST_gpio
 
   - platform: gpio
-    pin: 4
-    name: "zBSL"
+    pin: 32
+    name: "Zigbee Module Bootloader Pin"
     id: zBSL
     inverted: true
     restore_mode: ALWAYS_OFF
 
+button:
+  - platform: template
+    name: "Zigbee Module Reset"
+    disabled_by_default: true
+    id: zRST
+    on_press:
+      - switch.turn_on: zRST_gpio
+      - delay: 15ms
+      - switch.turn_off: zRST_gpio
+
   - platform: template
     name: "Prep the cc2652p2 for firmware update"
-    turn_on_action:
+    disabled_by_default: true
+    on_press:
       - script.execute: fw_update_mode
-    turn_off_action:
-      - switch.toggle: zRST
 
 uart:
   id: uart_bus

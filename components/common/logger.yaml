@@ -9,10 +9,11 @@
 
 substitutions:
   log_level: INFO
+  log_baudrate: "0"
 
 logger:
   id: component_logger
   # Disabling logging over UART by default.
   # Some devices this is needed, and in general, I really don't look at it.
-  baud_rate: 0
+  baud_rate: ${log_baudrate}
   level: ${log_level}
