@@ -7,6 +7,7 @@ packages:
   <<: !include_dir_named ../components/common
   wifi: !include ../components/hardware/wifi.yaml
   board: !include ../boards/m5stack-atom.yaml
+  mqtt: !include ../components/integrations/mqtt.yaml
 
 substitutions:
   log_baudrate: "115200"

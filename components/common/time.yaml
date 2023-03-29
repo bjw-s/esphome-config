@@ -12,9 +12,3 @@ substitutions:
 time:
   - <<: !include ../time/sntp.yaml
     timezone: "${time_timezone}"
-    on_time_sync:
-      - component.update: sensor_uptime_timestamp
-
-sensor:
-  - <<: !include ../sensors/uptime.yaml
-  - <<: !include ../sensors/uptime_timestamp.yaml
