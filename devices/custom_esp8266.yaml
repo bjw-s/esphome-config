@@ -1,8 +1,0 @@
----
-# Device: Custom ESP8266 board
-#
-
-packages:
-  <<: !include_dir_named ../components/common
-  wifi: !include ../components/hardware/wifi.yaml
-  board: !include ../boards/esp_01.yaml
