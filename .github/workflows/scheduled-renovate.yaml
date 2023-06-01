@@ -22,7 +22,7 @@ on:
       - ".github/renovate.json5"
       - ".github/renovate/**.json"
       - ".github/renovate/**.json5"
-      - ".github/workflows/schedule-renovate.yaml"
+      - ".github/workflows/scheduled-renovate.yaml"
 
 jobs:
   renovate:
