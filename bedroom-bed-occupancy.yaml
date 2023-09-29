@@ -1,0 +1,34 @@
+---
+substitutions:
+  system_name: bedroom_bed_occupancy
+  host_name: bedroom-bed-occupancy-esp.bjw-s.casa
+  friendly_name: Bedroom - Bed Occupancy
+  device_description: Generic ESP32 that detects bed occupancy
+
+packages:
+  device: !include devices/custom_esp32.yaml
+
+binary_sensor:
+  - platform: gpio
+    name: Bedroom - Bed Occupancy Right
+    device_class: occupancy
+    pin:
+      number: 13
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    filters:
+      - delayed_off: 5s
+
+  - platform: gpio
+    name: Bedroom - Bed Occupancy Left
+    device_class: occupancy
+    pin:
+      number: 12
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    filters:
+      - delayed_off: 5s
