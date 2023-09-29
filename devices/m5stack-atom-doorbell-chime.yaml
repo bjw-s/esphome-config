@@ -59,7 +59,7 @@ switch:
   - platform: template
     name: "${friendly_name} Muted"
     id: doorbell_chime_muted
-    restore_state: false
+    restore_mode: DISABLED
     turn_on_action:
       - globals.set:
           id: var_chime_muted

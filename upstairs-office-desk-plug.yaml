@@ -1,7 +1,7 @@
 ---
 substitutions:
   system_name: upstairs_office_desk_plug
-  host_name: upstairs-office-desk-plug.bjw-s.tech
+  host_name: upstairs-office-desk-plug.bjw-s.casa
   friendly_name: Upstairs Office - Desk Plug
   device_description: CloudFree P1EU plug that controls upstairs office desk power
   current_res: "0.00245"
