@@ -5,5 +5,8 @@
 #
 esphome:
   <<: !include .esphome.yaml
-  platform: esp32
+
+esp32:
   board: nodemcu-32s
+  framework:
+    type: arduino

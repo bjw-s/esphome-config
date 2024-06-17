@@ -1,0 +1,11 @@
+---
+substitutions:
+  system_name: attic-office-plug-homelab
+  host_name: attic-office-plug-homelab.bjw-s.internal
+  friendly_name: Attic Office - Homelab Plug
+  device_description: CloudFree P1EU plug
+  current_res: "0.00245"
+  voltage_div: "963"
+
+packages:
+  device: !include devices/cloudfree_p1eu.yaml

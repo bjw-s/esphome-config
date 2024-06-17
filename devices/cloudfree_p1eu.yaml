@@ -68,7 +68,7 @@ switch:
     name: ${friendly_name}
     pin: GPIO15
     id: relay
-    restore_mode: RESTORE_DEFAULT_OFF
+    restore_mode: RESTORE_DEFAULT_ON
     on_turn_on: # Action when relay is turned on
       - script.execute: led_power_on
     on_turn_off: # Action when relay is turned off

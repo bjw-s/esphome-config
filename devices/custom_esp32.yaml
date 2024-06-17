@@ -5,4 +5,4 @@
   packages:
     <<: !include_dir_named ../components/common
     wifi: !include ../components/hardware/wifi.yaml
-    board: !include ../boards/esp32.yaml
+    board: !include ../boards/nodemcu-32s.yaml
