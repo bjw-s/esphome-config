@@ -1,7 +1,7 @@
 lost+found
 
 #ESPHome ignores
-/.esphome/
+.esphome/
 /.build/
 **/.pioenvs/
 **/.piolibdeps/
