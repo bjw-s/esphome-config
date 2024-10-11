@@ -40,7 +40,7 @@ binary_sensor:
       number: GPIO5
       # mode: INPUT_PULLUP
       # inverted: True
-    name: "${friendly_name} Button"
+    name: "Button"
     on_state:
       then:
         - light.toggle: lightid

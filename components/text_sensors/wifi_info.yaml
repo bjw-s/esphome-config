@@ -9,10 +9,10 @@
 
 platform: wifi_info
 ip_address:
-  name: "${friendly_name} IP Address"
+  name: "IP Address"
 ssid:
-  name: "${friendly_name} Connected SSID"
+  name: "Connected SSID"
 bssid:
-  name: "${friendly_name} Connected BSSID"
+  name: "Connected BSSID"
 mac_address:
-  name: "${friendly_name} Connected MAC"
+  name: "Connected MAC"

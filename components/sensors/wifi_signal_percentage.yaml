@@ -11,10 +11,11 @@
 
 platform: template
 id: sensor_wifi_signal_percentage
-name: "${friendly_name} WiFi Signal Percentage"
+name: "WiFi Signal Percentage"
 icon: "mdi:wifi"
 unit_of_measurement: "%"
 update_interval: never
+entity_category: "diagnostic"
 lambda: |-
   if (id(sensor_wifi_signal).state) {
     if (id(sensor_wifi_signal).state <= -100 ) {

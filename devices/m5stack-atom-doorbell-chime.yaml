@@ -26,7 +26,7 @@ i2s_audio:
 media_player:
   - platform: i2s_audio
     id: media_out
-    name: ${friendly_name}
+    name: Media player
     dac_type: external
     i2s_dout_pin: GPIO25
     mode: mono
@@ -36,11 +36,11 @@ binary_sensor:
     pin:
       number: GPIO39
       inverted: true
-    name: ${friendly_name} Button
+    name: Button
 
 light:
   - platform: fastled_clockless
-    name: ${friendly_name}
+    name: Light
     id: led
     pin: GPIO27
     chipset: SK6812
@@ -57,7 +57,7 @@ light:
 
 switch:
   - platform: template
-    name: "${friendly_name} Muted"
+    name: "Muted"
     id: doorbell_chime_muted
     restore_mode: DISABLED
     turn_on_action:

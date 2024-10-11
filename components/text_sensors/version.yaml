@@ -9,4 +9,4 @@
 
 platform: version
 id: text_sensor_version
-name: "${friendly_name} ESPHome Version"
+name: "ESPHome Version"

@@ -25,16 +25,16 @@ sensor:
     change_mode_every: 8
     update_interval: 10s
     current:
-      name: ${friendly_name} Amperage
+      name: Amperage
       icon: mdi:current-ac
       unit_of_measurement: A
     voltage:
-      name: ${friendly_name} Voltage
+      name: Voltage
       icon: mdi:flash-circle
       unit_of_measurement: V
     power:
       id: wattage
-      name: ${friendly_name} Wattage
+      name: Wattage
       icon: mdi:flash-outline
       unit_of_measurement: W
     current_resistor: ${current_res}
@@ -42,7 +42,7 @@ sensor:
 
   # Reports the total Power so-far each day, resets at midnight, see https://esphome.io/components/sensor/total_daily_energy.html
   - platform: total_daily_energy
-    name: ${friendly_name} Total Daily Energy
+    name: Total Daily Energy
     icon: mdi:circle-slice-3
     power_id: wattage
     filters:
@@ -58,14 +58,15 @@ binary_sensor:
       number: GPIO13
       mode: INPUT_PULLUP
       inverted: true
-    name: ${friendly_name} Button # Name to make button visible in HA
+    name: Button # Name to make button visible in HA
     on_press:
       - switch.toggle: relay
 
 switch:
   # Relay itself
   - platform: gpio
-    name: ${friendly_name}
+    name: Power
+    device_class: outlet
     pin: GPIO15
     id: relay
     restore_mode: RESTORE_DEFAULT_ON
@@ -85,7 +86,7 @@ output:
 light:
   # RGB light
   - platform: monochromatic
-    name: ${friendly_name} Light
+    name: Light
     output: output_blue_led
     id: light_blue_led
 
