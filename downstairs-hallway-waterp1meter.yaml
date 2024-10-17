@@ -1,8 +1,8 @@
 ---
 substitutions:
-  system_name: hallway-waterp1meter-esp
-  host_name: hallway-waterp1meter-esp.bjw-s.internal
-  friendly_name: Hallway - WaterP1Meter
+  system_name: downstairs-hallway-waterp1meter
+  host_name: downstairs-hallway-waterp1meter.bjw-s.internal
+  friendly_name: Downstairs Hallway - WaterP1Meter
   device_description: Custom ESP that sends water meter and smart meter data
 
 packages:
