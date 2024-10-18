@@ -4,4 +4,6 @@
 # https://esphome.io/components/button/restart.html
 #
 button:
-  - <<: !include ../buttons/restart.yaml
+  - platform: restart
+    id: button_restart
+    name: "Restart"

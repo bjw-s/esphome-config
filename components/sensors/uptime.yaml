@@ -8,6 +8,6 @@
 #
 platform: uptime
 name: Uptime
-id: sensor_uptime
-update_interval: 60s
-entity_category: "diagnostic"
+id: uptime_seconds
+entity_category: diagnostic
+internal: true
