@@ -14,12 +14,6 @@ substitutions:
 preferences:
   flash_write_interval: 5min
 
-globals:
-  - id: total_water
-    type: float
-    restore_value: yes
-    initial_value: '0.0'
-
 ethernet:
   type: LAN8720
   mdc_pin: GPIO23
@@ -185,43 +179,22 @@ sensor:
     internal_filter: 200ms
     timeout: 2min
     accuracy_decimals: 1
-    # total:
-    #   id: sensor_pulse_meter_total
-    #   name: "Water Total Consumption"
-    #   icon: "mdi:cube-outline"
-    #   unit_of_measurement: "m³"
-    #   state_class: total_increasing
-    #   device_class: water
-    #   accuracy_decimals: 3
-    #   filters:
-    #     - multiply: 0.001
+    total:
+      id: sensor_pulse_meter_total
+      name: "Water Total Consumption"
+      icon: "mdi:cube-outline"
+      unit_of_measurement: "m³"
+      state_class: total_increasing
+      device_class: water
+      accuracy_decimals: 3
+      filters:
+        - multiply: 0.001
     pin: GPIO32
     on_value:
       then:
         - light.turn_on:
             id: light_led_green
             flash_length: 1s
-
-        - lambda: |-
-            static float previous_water_value = 0.0;
-            float current_water_value = id(sensor_pulse_meter).state;
-            id(total_water) += current_water_value - previous_water_value;
-            previous_water_value = current_water_value;
-            id(sensor_pulse_meter_total).update();
-
-  - platform: template
-    name: "Water Total Consumption"
-    id: sensor_pulse_meter_total
-    unit_of_measurement: "m³"
-    device_class: water
-    state_class: "total_increasing"
-    icon: "mdi:cube-outline"
-    accuracy_decimals: 3
-    filters:
-      - multiply: 0.001
-    lambda: |-
-      return id(total_water);
-    update_interval: 60s
 
   #HDC1080 temp & hum sensor
   - platform: hdc1080
