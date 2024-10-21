@@ -1,9 +1,12 @@
 ---
-  # M5Stack Atom
-  #
-  # https://docs.platformio.org/en/stable/boards/espressif32/m5stack-core-esp32.html
-  #
-  esphome:
-    <<: !include .esphome.yaml
-    platform: ESP32
+# M5Stack Atom
+#
+# https://docs.platformio.org/en/stable/boards/espressif32/m5stack-core-esp32.html
+#
+esphome:
+  <<: !include .esphome.yaml
+
+esp32:
     board: m5stack-atom
+    framework:
+      type: esp-idf

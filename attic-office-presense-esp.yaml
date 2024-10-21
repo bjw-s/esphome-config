@@ -1,0 +1,9 @@
+---
+substitutions:
+  system_name: attic-office-presence-esp
+  host_name: attic-office-presence-esp.bjw-s.internal
+  friendly_name: Attic Office - Presence ESP
+  device_description: M5Stack Atom Presence Detector
+
+packages:
+  device: !include devices/m5stack-atom-presence-detector.yaml
