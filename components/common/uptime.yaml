@@ -2,5 +2,3 @@
 # https://esphome.io/components/sensor/uptime.html
 sensor:
   - <<: !include ../sensors/uptime.yaml
-text_sensor:
-  - <<: !include ../text_sensors/uptime_readable.yaml
