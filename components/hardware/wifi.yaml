@@ -16,7 +16,7 @@ wifi:
   password: "${wifi_password}"
   reboot_timeout: 10min
   ap:
-    ssid: "${friendly_name} AP"
+    ssid: "${friendly_name}"
     password: "${wifi_ap_password}"
 
 sensor:
